@@ -19,7 +19,7 @@ public class ReservaService {
     }
 
     public Optional<ReservaModel> obterReservaPorId(Integer id){
-        return reservaRepository.findAllById(id);
+        return reservaRepository.findById(id);
     }
 
 }

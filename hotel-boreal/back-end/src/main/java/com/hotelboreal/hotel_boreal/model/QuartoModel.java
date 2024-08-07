@@ -1,6 +1,8 @@
 package com.hotelboreal.hotel_boreal.model;
 
 
+import com.hotelboreal.hotel_boreal.enums.QuartoStatus;
+import com.hotelboreal.hotel_boreal.enums.TipoDeQuarto;
 import jakarta.persistence.*;
 
 @Entity
@@ -9,16 +11,23 @@ public class QuartoModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int id_quarto;
+    @Column(name = "id_quarto")
+    private int id_quarto;
+
     @Column(name = "numero_do_quarto")
-    int numero_do_quarto;
+    private int numero_do_quarto;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "tipo")
+    private TipoDeQuarto tipo;
 
     @Column(name = "capacidade")
-    int capacidade;
+    private int capacidade;
 
     @Column(name = "preco_por_noite")
-    double preco_por_noite;
+    private double preco_por_noite;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    boolean status;
+    private QuartoStatus status;
 }
