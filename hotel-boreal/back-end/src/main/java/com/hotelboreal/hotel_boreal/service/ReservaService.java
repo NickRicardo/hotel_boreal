@@ -22,4 +22,12 @@ public class ReservaService {
         return reservaRepository.findById(id);
     }
 
+    public ReservaModel adicionarReserva(ReservaModel reservaModel){
+        return reservaRepository.save(reservaModel);
+    }
+
+    public void deletarReserva(int id){
+        reservaRepository.deleteById(id);
+    }
+
 }

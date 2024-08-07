@@ -11,6 +11,7 @@ import java.time.LocalDate;
 public class ReservaModel {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_reserva", nullable = false)
     private Integer id_reserva;
 
