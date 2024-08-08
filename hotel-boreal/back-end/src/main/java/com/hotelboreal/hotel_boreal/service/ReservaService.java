@@ -1,6 +1,6 @@
 package com.hotelboreal.hotel_boreal.service;
 
-import com.hotelboreal.hotel_boreal.model.ReservaModel;
+import com.hotelboreal.hotel_boreal.model.Reserva;
 import com.hotelboreal.hotel_boreal.repository.ReservaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,15 +14,15 @@ public class ReservaService {
     @Autowired
     ReservaRepository reservaRepository;
 
-    public List<ReservaModel> obterTodasReservas() {
+    public List<Reserva> obterTodasReservas() {
         return reservaRepository.findAll();
     }
 
-    public Optional<ReservaModel> obterReservaPorId(Integer id) {
+    public Optional<Reserva> obterReservaPorId(Integer id) {
         return reservaRepository.findById(id);
     }
 
-    public ReservaModel adicionarReserva(ReservaModel reservaModel) {
+    public Reserva adicionarReserva(Reserva reservaModel) {
         return reservaRepository.save(reservaModel);
     }
 
@@ -30,7 +30,7 @@ public class ReservaService {
         reservaRepository.deleteById(id);
     }
 
-    public ReservaModel atualizarReserva(int id, ReservaModel atualizarReserva) {
+    public Reserva atualizarReserva(int id, Reserva atualizarReserva) {
 
         if (reservaRepository.existsById(id)) {
             atualizarReserva.setId_reserva(id);

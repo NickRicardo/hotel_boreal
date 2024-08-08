@@ -1,6 +1,5 @@
 package com.hotelboreal.hotel_boreal.model;
 
-import com.hotelboreal.hotel_boreal.enums.QuartoStatus;
 import com.hotelboreal.hotel_boreal.enums.ReservaStatus;
 import jakarta.persistence.*;
 
@@ -8,7 +7,7 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "tb_reserva")
-public class ReservaModel {
+public class Reserva {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
