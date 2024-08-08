@@ -14,20 +14,29 @@ public class ReservaService {
     @Autowired
     ReservaRepository reservaRepository;
 
-    public List<ReservaModel> obterTodasReservas(){
+    public List<ReservaModel> obterTodasReservas() {
         return reservaRepository.findAll();
     }
 
-    public Optional<ReservaModel> obterReservaPorId(Integer id){
+    public Optional<ReservaModel> obterReservaPorId(Integer id) {
         return reservaRepository.findById(id);
     }
 
-    public ReservaModel adicionarReserva(ReservaModel reservaModel){
+    public ReservaModel adicionarReserva(ReservaModel reservaModel) {
         return reservaRepository.save(reservaModel);
     }
 
-    public void deletarReserva(int id){
+    public void deletarReserva(int id) {
         reservaRepository.deleteById(id);
     }
 
+    public ReservaModel atualizarReserva(int id, ReservaModel atualizarReserva) {
+
+        if (reservaRepository.existsById(id)) {
+            atualizarReserva.setId_reserva(id);
+            return reservaRepository.save(atualizarReserva);
+        } else {
+            throw new RuntimeException("Esta Reserva não existe em nosso Banco de dados.");
+        }
+    }
 }
