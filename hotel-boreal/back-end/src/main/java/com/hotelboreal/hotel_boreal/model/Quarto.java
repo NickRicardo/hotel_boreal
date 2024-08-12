@@ -28,7 +28,7 @@ public class Quarto {
     private double preco_por_noite;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "status")
+    @Column(name = "status_do_quarto")
     private QuartoStatus status;
 
     public int getId_quarto() {
