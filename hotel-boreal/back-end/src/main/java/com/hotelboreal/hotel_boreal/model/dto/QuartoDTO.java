@@ -6,5 +6,4 @@ public class QuartoDTO {
 
     private int numero_do_quarto;
 
-    private
 }
