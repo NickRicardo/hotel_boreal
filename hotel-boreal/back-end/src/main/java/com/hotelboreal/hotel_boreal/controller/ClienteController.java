@@ -6,7 +6,6 @@ import com.hotelboreal.hotel_boreal.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.lang.ref.Cleaner;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +39,9 @@ public class ClienteController {
     public Cliente atualizarCliente(@PathVariable int id, @RequestBody Cliente cliente){
         return clienteService.atualizarCliente(id, cliente);
     }
+
+    @PostMapping
+    public  Cliente
 
 }
 
